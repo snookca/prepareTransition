@@ -7,6 +7,7 @@ element will still work correctly. Once the transition is complete, the class na
 is removed.
 
 Example usage:
+
     $('#btn-test').bind('click', function(){
         $('.msg').prepareTransition().toggleClass('hidden');
     });
