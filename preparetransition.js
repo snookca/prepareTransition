@@ -11,6 +11,9 @@
  *      display: block !important;
  *      visibility: hidden !important;
  *  }
+ *
+ *  MIT license 
+ *  http://www.opensource.org/licenses/mit-license.php
  */
 
 (function($){
