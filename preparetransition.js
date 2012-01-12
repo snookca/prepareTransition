@@ -23,7 +23,6 @@ $.fn.prepareTransition = function(){
         var el = $(this);
         // remove the transition class upon completion
         el.one('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd', function(){
-            console.log('here');
             el.removeClass('is-transitioning');
         });
 
