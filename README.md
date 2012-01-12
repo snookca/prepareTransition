@@ -1,4 +1,4 @@
-=== prepareTransition jQuery Plugin
+# prepareTransition jQuery Plugin
 
 The prepareTransition plugin sets display and visibility to override any existing
 display and visibility properties. This ensures that the element can still animate
