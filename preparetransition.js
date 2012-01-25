@@ -9,7 +9,7 @@
  *  Requires the following CSS:
  *  .is-transitioning {
  *      display: block !important;
- *      visibility: hidden !important;
+ *      visibility: visible !important;
  *  }
  *
  *  MIT license 
