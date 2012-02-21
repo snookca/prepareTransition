@@ -34,9 +34,9 @@
 			// If I have a duration then prepare transition
 			if (duration !== 0) {
 				$this
-					.addClass('is-transitioning')
+					.addClass('transitioning')
 					.one('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd', function () {
-						$this.removeClass('is-transitioning');
+						$this.removeClass('transitioning');
 					})
 					.width(); // Force the style rendering
 			}
