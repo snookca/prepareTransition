@@ -1,10 +1,16 @@
 # prepareTransition jQuery Plugin
 
-The prepareTransition plugin sets display and visibility to override any existing display and visibility properties. This ensures that the element can still animate without issue. For users who don't have support for CSS transitions, then the element will still work correctly. Once the transition is complete, the class name is removed.
+This plugin helps you prepare a HTML element for a CSS transition to allow for changes in `display` and `visibility` properties.
+
+## How it works
+
+This works by overriding the `display` and `visiblity` problems with values of `block` and `visible` respectively by adding a class. Once the animation is complete, this class is then removed.
 
 [See an example](http://oliverjash.github.com/prepareTransition/).
 
-## Use
+## Usage
+
+Use the plugin before you trigger your CSS animation. The rest is magic.
 
     $('#transition').click(function () {
         $('.item').prepareTransition().toggleClass('hidden');
