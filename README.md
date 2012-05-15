@@ -6,7 +6,7 @@ This plugin helps you prepare a HTML element for a CSS transition to allow for c
 
 This works by overriding the `display` and `visiblity` problems with values of `block` and `visible` respectively by adding a class. Once the animation is complete, this class is then removed.
 
-[See an example](http://oliverjash.github.com/prepareTransition/).
+[See an example](http://oliverjash.github.com/prepare-transition/).
 
 ## Usage
 
