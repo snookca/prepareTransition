@@ -1,4 +1,4 @@
-# prepareTransition jQuery Plugin
+# PrepareTransition
 
 This plugin helps you prepare a HTML element for a CSS transition to allow for changes in `display` and `visibility` properties.
 
