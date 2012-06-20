@@ -12,6 +12,4 @@ This works by overriding the `display` and `visiblity` problems with values of `
 
 Use the plugin before you trigger your CSS animation. The rest is magic.
 
-    $('#transition').click(function () {
-        $('.item').prepareTransition().toggleClass('hidden');
-    });
+    $('.item').prepareTransition();
