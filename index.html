@@ -1,107 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>prepareTransition jQuery Plugin</title>
-		<style>
-			body {
-				font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-				background: #eee;
-				margin: 1em;
-			}
+  <head>
+    <meta charset="utf-8">
+    <title>PrepareTransition</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
 
-			a {
-				color: inherit;
-			}
+      .ribbon {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
 
-			section {
-				width: 100%;
-				max-width: 600px;
-				margin: auto;
-			}
+      .example {
+        position: relative;
+      }
 
-			h2 {
-				font-size: 100%;
-			}
+      .item {
+        position: absolute;
+        padding: 1em;
+        background-color: hotPink;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        opacity: 1;
+      }
 
-			p {
-				font-weight: 300;
-			}
+      .item:first-child {
+        top: 0;
+      }
 
-			button {
-				font: inherit;
-				margin: 1em 0;
-			}
+      .item:last-child {
+        top: 50px;
+      }
 
-			#ribbon {
-				position: absolute;
-				top: 0;
-				right: 0;
-				border: 0;
-			}
+      .item.hidden {
+        display: none;
+        opacity: 0;
+      }
 
-			#items {
-				position: relative;
-				height: 90px;
-			}
+      .is-transitioning {
+        display: block !important;
+        visibility: visible !important;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <hgroup>
+        <h1>PrepareTransition</h1>
+      </hgroup>
+      <button class="js-prepare-button">Prepare transition</button>
+      <div class="example">
+        <div class="item">Item 1</div>
+        <div class="item hidden">Item 2</div>
+      </div>
+      <a class="ribbon" href="https://github.com/OliverJAsh/PrepareTransition">
+        <img src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
+      </a>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="jquery.preparetransition.js"></script>
+    <script>
+      ;(function ($) {
 
-			#items div {
-				position: absolute;
-				padding: 5px 10px;
-				background-color: #CCC;
-				-webkit-transition: opacity 1s;
-				-moz-transition: opacity 1s;
-				-o-transition: opacity 1s;
-				opacity: 1;
-			}
+        $(document).ready(function (){
 
-			#items div:first-child {
-				top: 0;
-			}
+          $('.js-prepare-button').bind('click', function () {
+            $('.item').prepareTransition().toggleClass('hidden');
+          });
 
-			#items div:last-child {
-				top: 50px;
-			}
+        });
 
-			#items .hidden {
-				display: none;
-				opacity: 0;
-			}
-
-			.transitioning {
-				display: block !important;
-				visibility: visible !important;
-			}
-		</style>
-	</head>
-	<body>
-		<section>
-			<header>
-				<hgroup>
-					<h1>prepareTransition jQuery Plugin</h1>
-					<h2>A plugin by <a href="http://twitter.com/OliverJAsh">Oliver Joseph Ash</a></h2>
-				</hgroup>
-				<a href="https://github.com/OliverJAsh/prepareTransition">Get the code</a>
-			</header>
-			<p>This is an example of the prepareTransition jQuery Plugin.</p>
-			<a href="https://github.com/OliverJAsh/prepareTransition">
-				<img id="ribbon" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub">
-			</a>
-			<div id="items">
-				<div>Item 1</div>
-				<div class="hidden">Item 2</div>
-			</div>
-			<button id="prepare">prepareTransition</button>
-		</section>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script src="jquery.preparetransition.min.js"></script>
-		<script>
-			$(document).ready(function (){
-				$('#prepare').bind('click', function () {
-					$('#items div').prepareTransition().toggleClass('hidden');
-				});
-			});
-		</script>
-	</body>
+    }(jQuery));
+    </script>
+  </body>
 </html>
