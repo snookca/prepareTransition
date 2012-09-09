@@ -2,7 +2,7 @@
 
 This plugin helps you prepare a HTML element for a CSS transition to allow for changes in `display` and `visibility` properties.
 
-## How it works
+## How It Works
 
 This works by overriding the `display` and `visiblity` problems with values of `block` and `visible` respectively by adding a class. Once the animation is complete, this class is then removed.
 
