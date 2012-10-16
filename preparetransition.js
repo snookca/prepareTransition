@@ -30,7 +30,7 @@ $.fn.prepareTransition = function(){
         var cl = ["transition-duration", "-moz-transition-duration", "-webkit-transition-duration", "-o-transition-duration", "-ms-transition-duration"];
         var duration = 0;
         $.each(cl, function(idx, itm){
-            duration =  parseFloat( el.css( itm ) ) || duration;
+            duration || (duration = parseFloat( el.css( itm ) ));
         });
 
         // if I have a duration then add the class
