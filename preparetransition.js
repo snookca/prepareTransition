@@ -22,12 +22,12 @@ $.fn.prepareTransition = function(){
     return this.each(function(){
         var el = $(this);
         // remove the transition class upon completion
-        el.one('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd MSTransitionEnd', function(){
+        el.one('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd', function(){
             el.removeClass('is-transitioning');
         });
 
         // check the various CSS properties to see if a duration has been set
-        var cl = ["transition-duration", "-moz-transition-duration", "-webkit-transition-duration", "-o-transition-duration", "-ms-transition-duration"];
+        var cl = ["transition-duration", "-moz-transition-duration", "-webkit-transition-duration", "-o-transition-duration"];
         var duration = 0;
         $.each(cl, function(idx, itm){
             duration || (duration = parseFloat( el.css( itm ) ));
