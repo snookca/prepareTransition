@@ -17,7 +17,7 @@ You can also choose to target a transition that is triggered by a parent class.
 Example JS:
 
 	$elementWithTransition.prepareTransition( $parentElementWithState );
-	$parentElementWithState.toggleClass( "is-something" );
+	$parentElementWithState.toggleClass( "is-shown" );
 
 Example CSS:
 	
@@ -27,7 +27,7 @@ Example CSS:
 	    display: block;
 	}
 
-	.is-collapsed .examplepanel {
+	.is-shown .examplepanel {
 		opacity: 0;
 		display: none;
 	}
