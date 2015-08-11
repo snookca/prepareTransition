@@ -1,0 +1,29 @@
+{
+  "name": "prepare-transition",
+  "version": "0.1.1",
+  "description": "The prepareTransition plugin sets display and visibility to override any existing display and visibility properties.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snookca/prepareTransition.git"
+  },
+  "keywords": [
+    "css",
+    "transition",
+    "jquery"
+  ],
+  "author": "jonathan@snook.ca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snookca/prepareTransition/issues"
+  },
+  "homepage": "https://github.com/snookca/prepareTransition#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}
