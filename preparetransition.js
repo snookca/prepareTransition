@@ -18,6 +18,7 @@
 
 (function($){
 
+    // Checks if transitions are supported
     function supportsTransitions() {
         var b = document.body || document.documentElement,
             s = b.style,
@@ -36,7 +37,7 @@
         return false;
     }
 
-    // So we know what browser we're using and if it needs vendor prefixes for transform property
+    // gets the CSS & JS name of the 'transform' property, which can vary from browser to browser
     function getTransformName() {
         var st = window.getComputedStyle(document.body, null);
 
@@ -78,18 +79,15 @@
     }
 
 /**
- * @param parentEl {jQuery Element} optional - If passed in the 'is-transitioning' class will be added/removed from here rather than the "this" element
  * @param property {string} optional - If passed transition end events will only look for events with this property type. This is useful when avoiding multiple transition events on the same element or it's children.
  */
-$.fn.prepareTransition = function( parentEl, property ){
+$.fn.prepareTransition = function( property ){
     var hasTrans = supportsTransitions();
 
     if(property === "transform") property = getTransformName().css;
 
     return this.each(function(){
         var el = $(this);
-        if( !parentEl ) parentEl = el;
-
         
         if( hasTrans ) {
             var evtFired = false;
@@ -99,15 +97,13 @@ $.fn.prepareTransition = function( parentEl, property ){
             // remove the transition class upon completion (don't ise $.one, incase multiple properties transitioning)
             el.on('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd', function(evt){
 
-                console.log( evt.originalEvent.propertyName)
-
                 // just triggers for one property type (if specified)
                 if( property && evt.originalEvent.propertyName !== property ) return;
 
                 // stops multiple events triggering
                 if(!evtFired) {
                     evtFired = true;
-                    parentEl.removeClass('is-transitioning');
+                    el.removeClass('is-transitioning');
 
                     // Need to add MS events as well?
                     $(this).off('TransitionEnd webkitTransitionEnd transitionend oTransitionEnd');
@@ -117,7 +113,7 @@ $.fn.prepareTransition = function( parentEl, property ){
             el.addClass('hasnt-transition');
         }
 
-        // Need to add MS events as well?
+        // Don't we need to add MS events as well?
 
         // check the various CSS properties to see if a duration has been set
         var cl = ["transition-duration", "-moz-transition-duration", "-webkit-transition-duration", "-o-transition-duration"];
@@ -126,11 +122,11 @@ $.fn.prepareTransition = function( parentEl, property ){
             duration || (duration = parseFloat( el.css( itm ) ));
         });
 
-        // Need to add delay here as well
+        // Should really add delay here as well, right?
 
         // if I have a duration then add the class
         if (duration != 0) {
-            if( hasTrans ) parentEl.addClass('is-transitioning');
+            if( hasTrans ) el.addClass('is-transitioning');
             el[0].offsetWidth; // check offsetWidth to force the style rendering
         };
     });

@@ -12,13 +12,6 @@ Example usage:
         $('.msg').prepareTransition().toggleClass('hidden');
     });
 
-You can also choose to target a transition that is triggered by a parent class.
-
-Example JS:
-
-	$elementWithTransition.prepareTransition( $parentElementWithState );
-	$parentElementWithState.toggleClass( "is-shown" );
-
 Example CSS:
 	
 	.examplepanel {
@@ -32,6 +25,6 @@ Example CSS:
 		display: none;
 	}
 
-	.is-transitioning .examplepanel {
+	.examplepanel.is-transitioning {
 		display: block !important;
 	}
