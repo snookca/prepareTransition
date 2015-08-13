@@ -12,3 +12,19 @@ Example usage:
         $('.msg').prepareTransition().toggleClass('hidden');
     });
 
+Example CSS:
+	
+	.examplepanel {
+	    opacity: 1;
+	    transition: opacity 1s;
+	    display: block;
+	}
+
+	.is-shown .examplepanel {
+		opacity: 0;
+		display: none;
+	}
+
+	.examplepanel.is-transitioning {
+		display: block !important;
+	}
